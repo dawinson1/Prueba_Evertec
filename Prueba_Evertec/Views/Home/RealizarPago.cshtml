@@ -1,0 +1,45 @@
+﻿@{
+    ViewData["Title"] = "Realizar Pago";
+}
+
+<form asp-controller="Home" asp-action="RealizarPago" id="FormFactura">
+    
+    <div class="mb-3">
+        <select class="form-select" aria-label="Tipo de documento" id="TipoDocumento" name="TipoDocumento">
+              <option value ="CC" selected>Cédula de ciudadania</option>
+              <option value="CE">Cédula de extranjería</option> 
+              <option value="NIT">NIT</option> 
+              <option value="RUT">RUT</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="NumDoc" class="form-label">Número Documento</label>
+        <input type="number" class="form-control" id="NumDoc" name="NumDoc" />
+    </div>
+    <div class="mb-3">
+        <label for="Nombres" class="form-label">Nombres</label>
+        <input type="text" class="form-control" id="Nombres" name="Nombres"/>
+    </div>
+    <div class="mb-3">
+        <label for="Apellidos" class="form-label">Apellidos</label>
+        <input type="text" class="form-control" id="Apellidos" name="Apellidos" />
+    </div>
+    <div class="mb-3">
+        <label for="Correo" class="form-label">Correo Electrónico</label>
+        <input type="email" class="form-control" id="Correo" name="Correo" placeholder="usuario@ejemplo.com"/>
+    </div>
+    <div class="mb-3">
+        <label for="NumCelular" class="form-label">Número Celular</label>
+        <input type="number" class="form-control" id="NumCelular" name="NumCelular" />
+    </div>
+    <div class="mb-3">
+        <label for="ValorPago" class="form-label">Valor a pagar</label>
+        <input type="number" class="form-control" id="ValorPago" name="ValorPago" />
+    </div>
+
+    <div class="mb-3">
+        <input type="hidden" class="form-control" id="wclip" name="wclip"/>
+    </div>
+
+    <button type="button"  id="EnviarFactura" class="btn btn-primary">Realizar Pago</button>
+</form>

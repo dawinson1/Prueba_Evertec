@@ -1,0 +1,18 @@
+﻿@model ErrorViewModel
+@{
+    ViewData["Title"] = "Error";
+}
+<!-- estya vista reflejará la informacion por la  cual no fue posible crear la  sesion de pago-->
+<h1 class="text-danger">Error.</h1>
+<h2 class="text-danger">Ha ocurrido un error al intentar realizar el pago.</h2>
+
+<h3>Detalles del  error</h3>
+<p>Estado: @Model.Estado .</p>
+<p>Mensaje: @Model.Mensaje .</p>
+<p>Fecha: @Model.Fecha </p>
+<p>Por favor comunicarse con el  equipo de soporte</p>
+
+   <button type="button" class="btn btn-primary">
+       <a class="text-black text-decoration-none" asp-area="" asp-controller="Home" asp-action="Index">Inicio</a>
+   </button>
+

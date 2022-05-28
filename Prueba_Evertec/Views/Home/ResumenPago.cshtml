@@ -1,0 +1,39 @@
+﻿@using PlacetoPay.Integrations.Library.CSharp.Message
+@model RedirectInformation
+
+@{
+    ViewData["Title"] = "Resumen Pago";
+    var ultimopago = Model.Payment.First();
+}
+<!--Vista que  plasmará la  informacion cuando el proceso de  pago  haya terminado-->
+<div class="text-center">
+
+    <h1>Resumen Del Pago</h1>
+    <p>Estado del pago: @switch (ultimopago.Status.status)
+        { 
+            case "PENDING" :
+                <b class="estpago-pendiente"> Pendiente</b>
+                break;
+            case "APPROVED" :
+                <b class="estpago-aprovado"> Aprovado</b>
+                break;
+            case "REJECTED" :
+                <b class="estpago-rechazado"> Rechazado</b>
+                break;
+           case "FAILED" :
+                <b class="estpago-fallido"> Fallido</b>
+                break;
+        }
+    </p>
+
+    <p>
+        Referencia : <b>@ultimopago.Reference</b>
+    </p>
+
+    <p>
+        Valor : <b>$ @ultimopago.Amount.To.Total</b>
+    </p>
+
+
+</div>
+
