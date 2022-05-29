@@ -52,14 +52,14 @@ namespace Prueba_Evertec.Controllers
             else
             {
                 //en caso de que no se haya creado la sesion paso los datos de de la sesion al ErrorViewModel y poder mostrar la informacion en la  vista Error
-                var error = new ErrorViewModel()
+                var error = new ErrorViewModel
                 {
                     Estado = crear_pago.Status.status,
                     Mensaje = crear_pago.Status.Message,
                     Fecha = crear_pago.Status.Date
                 };
 
-                return  View("Error", error);
+                return  RedirectToAction("Error", "Home", error);
             }
 
 
@@ -91,9 +91,9 @@ namespace Prueba_Evertec.Controllers
         //    return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         //}
 
-        public IActionResult Error()
+        public IActionResult Error(ErrorViewModel errorViewModel)
         {
-            return View();
+            return View(errorViewModel);
         }
 
     }
